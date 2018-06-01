@@ -42,7 +42,7 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="/css/style.css">
 
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Modernizr JS -->
 	<script src="/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -62,44 +62,39 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="/"><span>Home</span></a></li>
+							<li><a href="/"><span>Home</span></a></li>
 							<li><a href="/about"><span>About</span></a></li>
 							<li><a href="/recentwork"><span>Recent Work</span></a></li>
 							<li><a href="/team"><span>Team</span></a></li>
-							<li class="call-to-action"><a class="sign-up" href="/signup"><span>Sign Up</span></a></li>
-							<li class="call-to-action"><a class="log-in" href="/login"><span>Login</span></a></li>
+							<li class="call-to-action"><a href="/logout" class="log-in"><span>Logout</span></a></li>
 						</ul>
 					</div>
 				</nav>
 		  </div>
 		</header>
-
+ 
 		<section id="fh5co-home" data-section="home" style="background-image: url(/images/full_image_6.jpg);" data-stellar-background-ratio="0.5">
 			<div class="gradient"></div>
 			<div class="container">
 				<div class="text-wrap">
 					<div class="text-inner">
 						<div class="row">
-							<div class="col-md-8 col-md-offset-2">
-								<!-- show any messages that come back with authentication -->
-								<div class="call-to-action">
-									<div class="login-wrap">
-										<div class="login-html">
-											<div class="text-center">
-												<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-												<a href="/logout" class="log-in"><span>Logout</span></a>
-											</div>
-											<div class="row">
-												<h3><span class="fa fa-user"></span> Local</h3>
-												<p>
-													<strong>id</strong>: <%= user.id %><br>
-													<strong>username</strong>: <%= user.username %><br>
-													<strong>password</strong>: <%= user.password %>
-												</p>
-											</div>
-										</div>
-									</div>
+							<div class="col-md-4 col-sm-12 col-xs 12">
+								<div class="card">
+									<img src="/images/team2.jpg" alt="John" style="width:100%">
+								  	<h1><%= user.username %></h1>
+								  	<p class="title">CEO & Founder, Example</p>
+								  	<p style="color: black;">Harvard University</p>
+								  	<div class="social-links">
+									    <a href="#"><i class="fa fa-dribbble"></i></a> 
+									    <a href="#"><i class="fa fa-twitter"></i></a>  
+									    <a href="#"><i class="fa fa-linkedin"></i></a>  
+									    <a href="#"><i class="fa fa-facebook"></i></a> 
+									 </div>
+									<p><button data-id="<%= user.id %>">Edit Profile</button></p>
 								</div>
+							</div>
+							<div class="col-md-8 col-sm-12 col-xs 12">
 							</div>
 						</div>
 					</div>

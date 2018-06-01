@@ -2,13 +2,25 @@
 module.exports=function(app, passport){
 	//homepage is login/signup page
 	app.get('/', function(req, res){
-		res.render('index.ejs');
+		if (req.isAuthenticated()){
+			res.render('profile.ejs', {
+				user : req.user
+			});
+		}else{
+			res.render('index.ejs');
+		}
 	});
 
 	//login page with login form
 	app.get('/login', function(req, res){
 		//show page with flas data
-		res.render('login.ejs', { message: req.flash('loginMessage') });
+		if (req.isAuthenticated()){
+			res.render('profile.ejs', {
+				user : req.user
+			});
+		}else{
+			res.render('login.ejs', { message: req.flash('loginMessage') });
+		}
 	});
 
 	// process the login form
@@ -30,8 +42,16 @@ module.exports=function(app, passport){
 
     // show the signup form
 	app.get('/signup', function(req, res) {
-		// render the page and pass in any flash data if it exists
-		res.render('signup.ejs', { message: req.flash('signupMessage') });
+		//show page with flas data
+		if (req.isAuthenticated()){
+			res.render('profile.ejs', {
+				user : req.user
+			});
+		}else{
+			// render the page and pass in any flash data if it exists
+			res.render('signup.ejs', { message: req.flash('signupMessage') });
+		}
+		
 	});
 
 	// process the signup form
@@ -48,7 +68,7 @@ module.exports=function(app, passport){
 			user : req.user // get the user out of session and pass to template
 		});
 	});
-
+ 
 	//logout
 	app.get('/logout', function(req, res) {
 		req.logout();

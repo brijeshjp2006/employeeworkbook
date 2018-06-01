@@ -373,9 +373,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   background: rgba(0, 0, 0, 0.3);
 }
-#fh5co-home, #fh5co-home .text-wrap {
-  height: 100vh;
-}
+
 #fh5co-home .text-wrap {
   display: table;
   width: 100%;
@@ -1479,6 +1477,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 2em;
   }
 }
+@media screen and (min-width: 768px) {
+  #fh5co-home, #fh5co-home .text-wrap {
+    height: 100vh;
+  }
+}
 
 .row-bottom-padded-sm {
   padding-bottom: 2em;
@@ -1523,11 +1526,11 @@ a{color:inherit;text-decoration:none}
   position:relative;
   box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
-.login-html{
-  width:100%;
-  height:100%;
-  position:absolute;
-  padding:90px 70px 50px 70px;
+.login-html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 0px 50px 0px;
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -1664,4 +1667,49 @@ a{color:inherit;text-decoration:none}
 }
 :-moz-placeholder { 
   color: #fff;
+}
+
+/* profile card css */
+#fh5co-home .text-inner .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: #fff;
+  border: 1px solid #fff;
+}
+#fh5co-home .text-inner .card h1{
+    color: #333;
+    font-family: "PT Sans", Arial, serif;
+    font-weight: 400;
+    margin: 0px;
+    text-transform: capitalize;
+}
+#fh5co-home .text-inner .card .title {
+  color: grey;
+  font-size: 18px;
+}
+
+#fh5co-home .text-inner .card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+#fh5co-home .text-inner .card .social-links a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+#fh5co-home .text-inner .card button:hover, #fh5co-home .text-inner .card a:hover {
+  opacity: 0.7;
 }
